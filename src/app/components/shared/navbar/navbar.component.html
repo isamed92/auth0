@@ -13,10 +13,28 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item"><a class="nav-link" routerLinkActive="active" [routerLink]="['home']">Home <span class="sr-only">(current)</span></a></li>
-      <li class="nav-item"><a class="nav-link" routerLinkActive="active" [routerLink]="['precios']">Precios</a></li>
-      <li class="nav-item"><a class="nav-link" routerLinkActive="active" [routerLink]="['protegida']">Protegida</a></li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['home']"
+          >Home <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['precios']"
+          >Precios</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLinkActive="active"
+          [routerLink]="['protegida']"
+          >Protegida</a
+        >
+      </li>
     </ul>
-    <span class="navbar-text"> Navbar text with an inline element </span>
+    <span class="navbar-text">
+      <button (click)="login()" *ngIf="!auth.isAuthenticated()" type="button" class="btn btn-outline-primary">Ingresar</button>
+      <button (click)="logout()" *ngIf="auth.isAuthenticated()" type="button" class="btn btn-outline-primary">Salir</button>
+    </span>
   </div>
 </nav>
