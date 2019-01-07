@@ -20,6 +20,7 @@ export class NavbarComponent {
   }
 
   logout() {
+    // new comment
     this.auth.logout();
   }
 }
